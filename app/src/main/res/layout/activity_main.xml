@@ -9,14 +9,15 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="346dp"
-        android:layout_height="363dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleTicTacToeGame"
-        app:layout_constraintVertical_bias="0.49"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/tictactoe" />
 
     <TextView
@@ -34,8 +35,9 @@
 
     <ImageView
         android:id="@+id/place00"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:onClick="choosePosition"
         app:layout_constraintStart_toStartOf="@+id/imageView"
@@ -43,29 +45,29 @@
 
     <ImageView
         android:id="@+id/place20"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="228dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="192dp"
         android:onClick="choosePosition"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/place10"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="116dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="104dp"
         android:onClick="choosePosition"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/place02"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="228dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="208dp"
         android:layout_marginTop="8dp"
         android:onClick="choosePosition"
         app:layout_constraintStart_toStartOf="@+id/imageView"
@@ -73,9 +75,9 @@
 
     <ImageView
         android:id="@+id/place01"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="116dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="108dp"
         android:layout_marginTop="8dp"
         android:onClick="choosePosition"
         app:layout_constraintStart_toStartOf="@+id/imageView"
@@ -83,41 +85,72 @@
 
     <ImageView
         android:id="@+id/place11"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="128dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="104dp"
         android:onClick="choosePosition"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/place12"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="228dp"
-        android:layout_marginTop="128dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="104dp"
         android:onClick="choosePosition"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/place21"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="236dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="200dp"
         android:onClick="choosePosition"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/place22"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="216dp"
-        android:layout_marginTop="236dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="196dp"
+        android:layout_marginTop="208dp"
         android:onClick="choosePosition"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/whoStartLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:text="Pick one to start!"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/titleTicTacToeGame"
+        app:layout_constraintTop_toBottomOf="@+id/titleTicTacToeGame" />
+
+    <ImageView
+        android:id="@+id/circleStart"
+        android:layout_width="69dp"
+        android:layout_height="60dp"
+        android:onClick="circleStart"
+        app:layout_constraintStart_toStartOf="@+id/whoStartLabel"
+        app:layout_constraintTop_toBottomOf="@+id/whoStartLabel"
+        app:srcCompat="@drawable/circlettt" />
+
+    <ImageView
+        android:id="@+id/xStart"
+        android:layout_width="69dp"
+        android:layout_height="60dp"
+        android:onClick="xStart"
+        app:layout_constraintBottom_toBottomOf="@+id/circleStart"
+        app:layout_constraintEnd_toEndOf="@+id/whoStartLabel"
+        app:layout_constraintTop_toBottomOf="@+id/whoStartLabel"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/xttt" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="choosePosition"
     tools:context=".MainActivity">
 
     <ImageView
@@ -36,15 +37,17 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="8dp"
+        android:onClick="choosePosition"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/place20"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="228dp"
+        android:onClick="choosePosition"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
@@ -54,6 +57,7 @@
         android:layout_height="100dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="116dp"
+        android:onClick="choosePosition"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
@@ -63,6 +67,7 @@
         android:layout_height="100dp"
         android:layout_marginStart="228dp"
         android:layout_marginTop="8dp"
+        android:onClick="choosePosition"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
@@ -72,6 +77,7 @@
         android:layout_height="100dp"
         android:layout_marginStart="116dp"
         android:layout_marginTop="8dp"
+        android:onClick="choosePosition"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
@@ -81,6 +87,7 @@
         android:layout_height="100dp"
         android:layout_marginStart="116dp"
         android:layout_marginTop="128dp"
+        android:onClick="choosePosition"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
@@ -90,6 +97,7 @@
         android:layout_height="100dp"
         android:layout_marginStart="228dp"
         android:layout_marginTop="128dp"
+        android:onClick="choosePosition"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
@@ -99,6 +107,7 @@
         android:layout_height="100dp"
         android:layout_marginStart="108dp"
         android:layout_marginTop="236dp"
+        android:onClick="choosePosition"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
@@ -108,6 +117,7 @@
         android:layout_height="100dp"
         android:layout_marginStart="216dp"
         android:layout_marginTop="236dp"
+        android:onClick="choosePosition"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

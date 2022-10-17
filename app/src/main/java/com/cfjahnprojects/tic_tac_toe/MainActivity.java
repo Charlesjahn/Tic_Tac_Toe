@@ -34,16 +34,28 @@ public class MainActivity extends AppCompatActivity {
             imageView.setImageResource(R.drawable.circlettt);
             setBoardGame(idImage, this.turn%2);
         }
-
-//        printTable();
+        printTable();
         this.turn +=1;
         imageView.setOnClickListener(null);
     }
     public void xStart(View view){
-
+        disableHowStart();
+        setOnClickAction();
     }
     public void circleStart(View view){
-
+        disableHowStart();
+        this.turn +=1;
+        setOnClickAction();
+    }
+    private void setOnClickAction(){
+        ImageView table = findViewById(R.id.boardTTT);
+        table.setVisibility(View.VISIBLE);
+        for(int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                ImageView imageView = findViewById(this.imagePositions[i][j]);
+                imageView.setVisibility(View.VISIBLE);
+            }
+        }
     }
 
     private void setBoardGame(int idPlace, int x){
@@ -64,4 +76,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void disableHowStart(){
+        ImageView imageViewCircle = findViewById(R.id.circleStart);
+        imageViewCircle.setOnClickListener(null);
+        ImageView imageViewX = findViewById(R.id.xStart);
+        imageViewX.setOnClickListener(null);
+    }
 }

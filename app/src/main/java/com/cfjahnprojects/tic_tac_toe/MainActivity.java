@@ -50,12 +50,6 @@ public class MainActivity extends AppCompatActivity {
     private void setOnClickAction(){
         ImageView table = findViewById(R.id.boardTTT);
         table.setVisibility(View.VISIBLE);
-        for(int i=0;i<3;i++){
-            for(int j=0;j<3;j++){
-                ImageView imageView = findViewById(this.imagePositions[i][j]);
-                imageView.setVisibility(View.VISIBLE);
-            }
-        }
     }
 
     private void setBoardGame(int idPlace, int x){

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="choosePosition"
     tools:context=".MainActivity">
 
     <ImageView
@@ -21,6 +20,96 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/tictactoe" />
 
+    <ImageView
+        android:id="@+id/place00"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:onClick="choosePosition"
+        app:layout_constraintStart_toStartOf="@+id/boardTTT"
+        app:layout_constraintTop_toTopOf="@+id/boardTTT" />
+
+    <ImageView
+        android:id="@+id/place20"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="192dp"
+        android:onClick="choosePosition"
+        app:layout_constraintStart_toStartOf="@+id/boardTTT"
+        app:layout_constraintTop_toTopOf="@+id/boardTTT" />
+
+    <ImageView
+        android:id="@+id/place10"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="104dp"
+        android:onClick="choosePosition"
+        app:layout_constraintStart_toStartOf="@+id/boardTTT"
+        app:layout_constraintTop_toTopOf="@+id/boardTTT" />
+
+    <ImageView
+        android:id="@+id/place02"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="8dp"
+        android:onClick="choosePosition"
+        app:layout_constraintStart_toStartOf="@+id/boardTTT"
+        app:layout_constraintTop_toTopOf="@+id/boardTTT" />
+
+    <ImageView
+        android:id="@+id/place01"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="8dp"
+        android:onClick="choosePosition"
+        app:layout_constraintStart_toStartOf="@+id/boardTTT"
+        app:layout_constraintTop_toTopOf="@+id/boardTTT" />
+
+    <ImageView
+        android:id="@+id/place11"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="104dp"
+        android:onClick="choosePosition"
+        app:layout_constraintStart_toStartOf="@+id/boardTTT"
+        app:layout_constraintTop_toTopOf="@+id/boardTTT" />
+
+    <ImageView
+        android:id="@+id/place12"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="104dp"
+        android:onClick="choosePosition"
+        app:layout_constraintStart_toStartOf="@+id/boardTTT"
+        app:layout_constraintTop_toTopOf="@+id/boardTTT" />
+
+    <ImageView
+        android:id="@+id/place21"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="200dp"
+        android:onClick="choosePosition"
+        app:layout_constraintStart_toStartOf="@+id/boardTTT"
+        app:layout_constraintTop_toTopOf="@+id/boardTTT" />
+
+    <ImageView
+        android:id="@+id/place22"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="196dp"
+        android:layout_marginTop="208dp"
+        android:onClick="choosePosition"
+        app:layout_constraintStart_toStartOf="@+id/boardTTT"
+        app:layout_constraintTop_toTopOf="@+id/boardTTT" />
+
     <TextView
         android:id="@+id/titleTicTacToeGame"
         android:layout_width="wrap_content"
@@ -33,105 +122,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/place00"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:onClick="choosePosition"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/boardTTT"
-        app:layout_constraintTop_toTopOf="@+id/boardTTT" />
-
-    <ImageView
-        android:id="@+id/place20"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="192dp"
-        android:onClick="choosePosition"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/boardTTT"
-        app:layout_constraintTop_toTopOf="@+id/boardTTT" />
-
-    <ImageView
-        android:id="@+id/place10"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="104dp"
-        android:onClick="choosePosition"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/boardTTT"
-        app:layout_constraintTop_toTopOf="@+id/boardTTT" />
-
-    <ImageView
-        android:id="@+id/place02"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="208dp"
-        android:layout_marginTop="8dp"
-        android:onClick="choosePosition"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/boardTTT"
-        app:layout_constraintTop_toTopOf="@+id/boardTTT" />
-
-    <ImageView
-        android:id="@+id/place01"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="8dp"
-        android:onClick="choosePosition"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/boardTTT"
-        app:layout_constraintTop_toTopOf="@+id/boardTTT" />
-
-    <ImageView
-        android:id="@+id/place11"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="104dp"
-        android:onClick="choosePosition"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/boardTTT"
-        app:layout_constraintTop_toTopOf="@+id/boardTTT" />
-
-    <ImageView
-        android:id="@+id/place12"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="208dp"
-        android:layout_marginTop="104dp"
-        android:onClick="choosePosition"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/boardTTT"
-        app:layout_constraintTop_toTopOf="@+id/boardTTT" />
-
-    <ImageView
-        android:id="@+id/place21"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="200dp"
-        android:onClick="choosePosition"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/boardTTT"
-        app:layout_constraintTop_toTopOf="@+id/boardTTT" />
-
-    <ImageView
-        android:id="@+id/place22"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="196dp"
-        android:layout_marginTop="208dp"
-        android:onClick="choosePosition"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/boardTTT"
-        app:layout_constraintTop_toTopOf="@+id/boardTTT" />
 
     <TextView
         android:id="@+id/whoStartLabel"

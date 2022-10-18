@@ -30,13 +30,11 @@ public class MainActivity extends AppCompatActivity {
 
         if((this.turn%2) == 0){
             imageView.setImageResource(R.drawable.xttt);
-            setBoardGame(idImage,this.turn%2);
-            removeOnClick(R.drawable.xttt);
         }else{
             imageView.setImageResource(R.drawable.circlettt);
-            setBoardGame(idImage, this.turn%2);
-            removeOnClick(R.drawable.circlettt);
         }
+        setBoardGame(idImage,this.turn%2);
+        removeOnClick(idImage);
         winnerFinal(isWon());
 
         this.turn +=1;
@@ -87,9 +85,8 @@ public class MainActivity extends AppCompatActivity {
         ImageView imageView = findViewById(idImage);
         imageView.setOnClickListener(null);
     }
-    public boolean isWon(){
-        //return true if someone has won the game
 
+    private boolean isWon(){
         for(int row=0; row<board.length; row++){
             //check all the rows
             if (((board[row][0] == board[row][1]) && (board[row][0]==board[row][2])) && (board[row][0] != -1)) {

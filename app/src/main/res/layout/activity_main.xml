@@ -153,4 +153,16 @@
         app:layout_constraintTop_toBottomOf="@+id/whoStartLabel"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/xttt" />
+
+    <TextView
+        android:id="@+id/textWinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@+id/xStart"
+        app:layout_constraintStart_toStartOf="@+id/circleStart"
+        app:layout_constraintTop_toBottomOf="@+id/circleStart" />
 </androidx.constraintlayout.widget.ConstraintLayout>

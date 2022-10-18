@@ -2,9 +2,11 @@ package com.cfjahnprojects.tic_tac_toe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private int turn =0;
@@ -35,6 +37,19 @@ public class MainActivity extends AppCompatActivity {
             setBoardGame(idImage, this.turn%2);
         }
         printTable();
+        if(isWon()){
+            TextView textWin = findViewById(R.id.textWinner);
+            textWin.setText("Won");
+            textWin.setTextColor(Color.BLUE);
+            int winner = this.turn%2;
+            if(winner == 0){
+                ImageView imagewinner = findViewById(R.id.circleStart);
+                imagewinner.setVisibility(View.INVISIBLE);
+            }else{
+                ImageView imagewinner = findViewById(R.id.xStart);
+                imagewinner.setVisibility(View.INVISIBLE);
+            }
+        }
         this.turn +=1;
         imageView.setOnClickListener(null);
     }
@@ -76,26 +91,22 @@ public class MainActivity extends AppCompatActivity {
         ImageView imageViewX = findViewById(R.id.xStart);
         imageViewX.setOnClickListener(null);
     }
+
     public boolean isWon(){
         //return true if someone has won the game
 
         for(int row=0; row<board.length; row++){
-
             //check all the rows
             if (((board[row][0] == board[row][1]) && (board[row][0]==board[row][2])) && (board[row][0] != -1)) {
-
                 return true;
             }
         }
-
         for(int col=0; col<board.length; col++){
             //check all the columns
             if (((board[0][col] == board[1][col]) && (board[0][col]==board[2][col])) && (board[0][col] != -1)) {
-
                 return true;
             }
         }
-
         if( (board[0][0] == board[1][1]) && (board[0][0] == board[2][2]) && (board[0][0] != -1)){
             //diagonal winner 1
             return true;
@@ -108,6 +119,5 @@ public class MainActivity extends AppCompatActivity {
             //no winner
             return false;
         }
-
     }
 }

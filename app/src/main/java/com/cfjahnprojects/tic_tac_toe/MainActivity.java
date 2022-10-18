@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
             {-1,-1,-1,},
             {-1,-1,-1,},
             {-1,-1,-1,}};
-    private int player = 0;
     private int[][] imagePositions = {
             {R.id.place00,R.id.place01,R.id.place02,},
             {R.id.place10,R.id.place11,R.id.place12,},
@@ -32,37 +31,29 @@ public class MainActivity extends AppCompatActivity {
         if((this.turn%2) == 0){
             imageView.setImageResource(R.drawable.xttt);
             setBoardGame(idImage,this.turn%2);
+            removeOnClick(R.drawable.xttt);
         }else{
             imageView.setImageResource(R.drawable.circlettt);
             setBoardGame(idImage, this.turn%2);
+            removeOnClick(R.drawable.circlettt);
         }
-        printTable();
-        if(isWon()){
-            TextView textWin = findViewById(R.id.textWinner);
-            textWin.setText("Won");
-            textWin.setTextColor(Color.BLUE);
-            int winner = this.turn%2;
-            if(winner == 0){
-                ImageView imagewinner = findViewById(R.id.circleStart);
-                imagewinner.setVisibility(View.INVISIBLE);
-            }else{
-                ImageView imagewinner = findViewById(R.id.xStart);
-                imagewinner.setVisibility(View.INVISIBLE);
-            }
-        }
+        winnerFinal(isWon());
+
         this.turn +=1;
-        imageView.setOnClickListener(null);
     }
     public void xStart(View view){
-        disableHowStart();
-        setOnClickAction();
+        removeOnClick(R.id.circleStart);
+        removeOnClick(R.id.xStart);
+        setVisibility();
     }
     public void circleStart(View view){
-        disableHowStart();
+        removeOnClick(R.id.circleStart);
+        removeOnClick(R.id.xStart);
         this.turn +=1;
-        setOnClickAction();
+        setVisibility();
     }
-    private void setOnClickAction(){
+
+    private void setVisibility(){
         ImageView table = findViewById(R.id.boardTTT);
         table.setVisibility(View.VISIBLE);
     }
@@ -76,22 +67,26 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-    private void printTable(){
-        for(int i=0;i<3;i++){
-            for(int j=0;j<3;j++){
-                System.out.print(this.board[i][j]+" ");
+    private void winnerFinal(boolean tf){
+        if(tf){
+            TextView textWin = findViewById(R.id.textWinner);
+            textWin.setText("Won");
+            textWin.setTextColor(Color.BLUE);
+            int winner = this.turn%2;
+            ImageView imagewinner;
+            if(winner == 0){
+                imagewinner = findViewById(R.id.circleStart);
+            }else{
+                imagewinner = findViewById(R.id.xStart);
             }
-            System.out.println("\n");
+            imagewinner.setVisibility(View.INVISIBLE);
         }
     }
 
-    private void disableHowStart(){
-        ImageView imageViewCircle = findViewById(R.id.circleStart);
-        imageViewCircle.setOnClickListener(null);
-        ImageView imageViewX = findViewById(R.id.xStart);
-        imageViewX.setOnClickListener(null);
+    private void removeOnClick(int idImage){
+        ImageView imageView = findViewById(idImage);
+        imageView.setOnClickListener(null);
     }
-
     public boolean isWon(){
         //return true if someone has won the game
 

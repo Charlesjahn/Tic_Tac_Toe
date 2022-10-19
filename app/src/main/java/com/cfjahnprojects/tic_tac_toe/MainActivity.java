@@ -26,10 +26,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
     public void reloadPageScreen(View view){
         finish();
         startActivity(getIntent());
     }
+
     public void choosePosition(View view){
         int idImage = view.getId();
         ImageView imageView = findViewById(idImage);
@@ -44,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         this.turn +=1;
         winnerFinal(isWon());
         this.player +=1;
-        System.out.println(player);
     }
+
     public void xStart(View view){
         removeOnClick(R.id.circleStart);
         removeOnClick(R.id.xStart);
@@ -72,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
     @SuppressLint("SetTextI18n")
     private void winnerFinal(boolean tf){
         TextView textWin = findViewById(R.id.textWinner);

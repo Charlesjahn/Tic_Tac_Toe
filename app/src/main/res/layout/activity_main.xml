@@ -165,4 +165,13 @@
         app:layout_constraintEnd_toEndOf="@+id/xStart"
         app:layout_constraintStart_toStartOf="@+id/circleStart"
         app:layout_constraintTop_toBottomOf="@+id/circleStart" />
+
+    <ImageView
+        android:id="@+id/reloadPage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:onClick="reloadPageScreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/reload" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    public void reloadPageScreen(View view){
+        finish();
+        startActivity(getIntent());
+    }
     public void choosePosition(View view){
         int idImage = view.getId();
         ImageView imageView = findViewById(idImage);
@@ -36,29 +40,28 @@ public class MainActivity extends AppCompatActivity {
         setBoardGame(idImage,this.turn%2);
         removeOnClick(idImage);
         winnerFinal(isWon());
-
         this.turn +=1;
     }
     public void xStart(View view){
         removeOnClick(R.id.circleStart);
         removeOnClick(R.id.xStart);
-        setVisibility();
+        setVisibility(R.id.boardTTT);
     }
     public void circleStart(View view){
         removeOnClick(R.id.circleStart);
         removeOnClick(R.id.xStart);
         this.turn +=1;
-        setVisibility();
+        setVisibility(R.id.boardTTT);
     }
 
-    private void setVisibility(){
-        ImageView table = findViewById(R.id.boardTTT);
-        table.setVisibility(View.VISIBLE);
+    private void setVisibility(int idImage){
+        ImageView table = findViewById(idImage);
+        table.findViewById(idImage).setVisibility(View.VISIBLE);
     }
 
     private void setBoardGame(int idPlace, int x){
-        for(int i=0;i<3;i++){
-            for(int j=0;j<3;j++){
+        for(int i=0;i<this.imagePositions.length;i++){
+            for(int j=0;j<this.imagePositions.length;j++){
                 if(this.imagePositions[i][j]==idPlace){
                     this.board[i][j]=x;
                 }
@@ -76,6 +79,11 @@ public class MainActivity extends AppCompatActivity {
                 imagewinner = findViewById(R.id.circleStart);
             }else{
                 imagewinner = findViewById(R.id.xStart);
+            }
+            for(int i=0;i<this.imagePositions.length;i++){
+                for(int j=0;j<this.imagePositions.length;j++){
+                    removeOnClick(this.imagePositions[i][j]);
+                }
             }
             imagewinner.setVisibility(View.INVISIBLE);
         }

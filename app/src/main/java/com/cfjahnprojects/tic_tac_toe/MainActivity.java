@@ -2,6 +2,7 @@ package com.cfjahnprojects.tic_tac_toe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -11,11 +12,11 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private int player =0;
     private int turn = 0;
-    private int[][] board = {
+    private final int[][] board = {
             {-1,-1,-1,},
             {-1,-1,-1,},
             {-1,-1,-1,}};
-    private int[][] imagePositions = {
+    private final int[][] imagePositions = {
             {R.id.place00,R.id.place01,R.id.place02,},
             {R.id.place10,R.id.place11,R.id.place12,},
             {R.id.place20,R.id.place21,R.id.place22,}
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+    @SuppressLint("SetTextI18n")
     private void winnerFinal(boolean tf){
         TextView textWin = findViewById(R.id.textWinner);
         if(tf){
@@ -83,9 +85,9 @@ public class MainActivity extends AppCompatActivity {
             }else{
                 imagewinner = findViewById(R.id.xStart);
             }
-            for(int i=0;i<this.imagePositions.length;i++){
-                for(int j=0;j<this.imagePositions.length;j++){
-                    removeOnClick(this.imagePositions[i][j]);
+            for (int[] imagePosition : this.imagePositions) {
+                for (int j = 0; j < this.imagePositions.length; j++) {
+                    removeOnClick(imagePosition[j]);
                 }
             }
             imagewinner.setVisibility(View.INVISIBLE);
@@ -101,9 +103,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean isWon(){
-        for(int row=0; row<board.length; row++){
+        for (int[] ints : board) {
             //check all the rows
-            if (((board[row][0] == board[row][1]) && (board[row][0]==board[row][2])) && (board[row][0] != -1)) {
+            if (((ints[0] == ints[1]) && (ints[0] == ints[2])) && (ints[0] != -1)) {
                 return true;
             }
         }
@@ -113,17 +115,12 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         }
+        //diagonal winner 2
+        //no winner
         if( (board[0][0] == board[1][1]) && (board[0][0] == board[2][2]) && (board[0][0] != -1)){
             //diagonal winner 1
             return true;
         }
-        else if ((board[0][2] == board[1][1]) && (board[0][2] == board[2][0]) && (board[0][2] != -1)){
-            //diagonal winner 2
-            return true;
-        }
-        else{
-            //no winner
-            return false;
-        }
+        else return (board[0][2] == board[1][1]) && (board[0][2] == board[2][0]) && (board[0][2] != -1);
     }
 }

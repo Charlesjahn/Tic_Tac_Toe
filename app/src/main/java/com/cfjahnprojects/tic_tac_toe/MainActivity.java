@@ -9,7 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private int turn =0;
+    private int player =0;
+    private int turn = 0;
     private int[][] board = {
             {-1,-1,-1,},
             {-1,-1,-1,},
@@ -32,15 +33,17 @@ public class MainActivity extends AppCompatActivity {
         int idImage = view.getId();
         ImageView imageView = findViewById(idImage);
 
-        if((this.turn%2) == 0){
+        if((this.player%2) == 0){
             imageView.setImageResource(R.drawable.xttt);
         }else{
             imageView.setImageResource(R.drawable.circlettt);
         }
-        setBoardGame(idImage,this.turn%2);
+        setBoardGame(idImage,this.player%2);
         removeOnClick(idImage);
-        winnerFinal(isWon());
         this.turn +=1;
+        winnerFinal(isWon());
+        this.player +=1;
+        System.out.println(player);
     }
     public void xStart(View view){
         removeOnClick(R.id.circleStart);
@@ -50,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     public void circleStart(View view){
         removeOnClick(R.id.circleStart);
         removeOnClick(R.id.xStart);
-        this.turn +=1;
+        this.player +=1;
         setVisibility(R.id.boardTTT);
     }
 
@@ -69,11 +72,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void winnerFinal(boolean tf){
+        TextView textWin = findViewById(R.id.textWinner);
         if(tf){
-            TextView textWin = findViewById(R.id.textWinner);
-            textWin.setText("Won");
+            textWin.setText("WON");
             textWin.setTextColor(Color.BLUE);
-            int winner = this.turn%2;
+            int winner = this.player%2;
             ImageView imagewinner;
             if(winner == 0){
                 imagewinner = findViewById(R.id.circleStart);
@@ -86,6 +89,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             imagewinner.setVisibility(View.INVISIBLE);
+        }else if(this.turn >=9){
+            textWin.setText("DRAW");
+            textWin.setTextColor(Color.RED);
         }
     }
 
